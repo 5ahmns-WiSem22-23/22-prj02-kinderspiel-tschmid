@@ -1,52 +1,50 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    public GameObject[] objects;
-    public float moveAmount;
-    public Button button;
+    public GameObject[] objects; 
+    public float moveAmount = 10.0f; 
+    public float duration = 1.0f; 
     public SpriteRenderer spriteRenderer;
+    public Button uiButton;
+
 
     void Start()
     {
-        button.onClick.AddListener(MoveObject);
+        uiButton.onClick.AddListener(MoveObject);
     }
 
-    void MoveObject()
-    {
-        int randomNumber = Random.Range(1, 7);
-        Vector3 moveVector = new Vector3(moveAmount, 0, 0 );
 
-        if (randomNumber == 1)
+    public void MoveObject()
+    {
+        int randomNum = Random.Range(1, 7); 
+
+        switch (randomNum)
         {
-            objects[0].transform.position += moveVector;
-            spriteRenderer.color = Color.blue;
-        }
-        else if (randomNumber == 2)
-        {
-            objects[1].transform.position += moveVector;
-            spriteRenderer.color = new Color(204f/255f,0f, 204f/255f, 1f);
-        }
-        else if (randomNumber == 3)
-        {
-            objects[2].transform.position += moveVector;
-            spriteRenderer.color = new Color(1f, 128f / 255f, 0f, 1f);
-        }
-        else if (randomNumber == 4)
-        {
-            objects[3].transform.position += moveVector;
-            spriteRenderer.color = Color.red;
-        }
-        else if (randomNumber == 5)
-        {
-            objects[4].transform.position += moveVector;
-            spriteRenderer.color = Color.yellow;
-        }
-        else
-        {
-            objects[4].transform.position += moveVector;
-            spriteRenderer.color = Color.green;
+            case 1:
+                iTween.MoveBy(objects[0], iTween.Hash("x", moveAmount, "easeType", "easeInOutExpo", "loopType", "none", "time", duration));
+                spriteRenderer.color = Color.blue;
+                break;
+            case 2:
+                iTween.MoveBy(objects[1], iTween.Hash("x", moveAmount, "easeType", "easeInOutExpo", "loopType", "none", "time", duration));
+                spriteRenderer.color = new Color(204f / 255f, 0f, 204f / 255f, 1f);
+
+                break;
+            case 3:
+                iTween.MoveBy(objects[2], iTween.Hash("x", moveAmount, "easeType", "easeInOutExpo", "loopType", "none", "time", duration));
+                spriteRenderer.color = new Color(1f, 128f / 255f, 0f, 1f);
+                break;
+            case 4:
+                iTween.MoveBy(objects[3], iTween.Hash("x", moveAmount, "easeType", "easeInOutExpo", "loopType", "none", "time", duration));
+                spriteRenderer.color = Color.red;
+                break;
+            case 5:
+            case 6:
+                iTween.MoveBy(objects[4], iTween.Hash("x", -moveAmount, "easeType", "easeInOutExpo", "loopType", "none", "time", duration));
+                spriteRenderer.color = Color.yellow;
+                break;
         }
     }
 }
