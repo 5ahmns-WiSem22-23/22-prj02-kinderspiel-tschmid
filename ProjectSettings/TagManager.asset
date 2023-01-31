@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - boat
-  - orange
-  - red
-  - blue
-  - purple
   - colorIndicator
+  - fish
+  - boat
   layers:
   - Default
   - TransparentFX

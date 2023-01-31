@@ -152,14 +152,14 @@ RectTransform:
   m_GameObject: {fileID: 73224146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5741, y: 1.5741, z: 1.5741}
   m_Children: []
   m_Father: {fileID: 270199229}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -284, y: -157}
+  m_AnchoredPosition: {x: -133, y: -331}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &73224148
@@ -279,13 +279,13 @@ GameObject:
   m_Component:
   - component: {fileID: 112728871}
   - component: {fileID: 112728870}
-  - component: {fileID: 112728872}
   - component: {fileID: 112728873}
   - component: {fileID: 112728875}
   - component: {fileID: 112728874}
+  - component: {fileID: 112728872}
   m_Layer: 0
   m_Name: rot
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,14 +362,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112728869}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c4644fa18bf4c45afebcf31b0e2acf, type: 3}
+  m_Script: {fileID: 11500000, guid: 61c26b2ac148c4d44863edaca6d5b4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 1
-  duration: 1
-  spriteRenderer: {fileID: 772628413}
+  targetTag: boat
 --- !u!114 &112728873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,10 +476,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -540,6 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378984082}
   - component: {fileID: 378984081}
+  - component: {fileID: 378984083}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -560,6 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiButton: {fileID: 73224149}
+  spriteRendererColor: {fileID: 772628413}
 --- !u!4 &378984082
 Transform:
   m_ObjectHideFlags: 0
@@ -574,6 +574,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &378984083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378984080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7484b642065a07041b11383bb191d37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherScript: {fileID: 1223690182}
 --- !u!1 &430249078
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,9 +683,10 @@ GameObject:
   - component: {fileID: 461212054}
   - component: {fileID: 461212056}
   - component: {fileID: 461212055}
+  - component: {fileID: 461212057}
   m_Layer: 0
   m_Name: lila
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -754,9 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36feae93aecef01449df393fd172341e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 1
-  duration: 1
-  spriteRenderer: {fileID: 772628413}
 --- !u!114 &461212054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,6 +828,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &461212057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461212050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c26b2ac148c4d44863edaca6d5b4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: boat
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +1000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772628412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.99, y: -1.82, z: 0}
+  m_LocalPosition: {x: 0.15, y: -3.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1078,9 +1102,10 @@ GameObject:
   - component: {fileID: 1154082400}
   - component: {fileID: 1154082402}
   - component: {fileID: 1154082401}
+  - component: {fileID: 1154082403}
   m_Layer: 0
   m_Name: orange
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1162,9 +1187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48267b50a80482740912304e12abadc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 1
-  duration: 1
-  spriteRenderer: {fileID: 772628413}
 --- !u!114 &1154082400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,6 +1247,112 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1154082403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154082396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c26b2ac148c4d44863edaca6d5b4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: boat
+--- !u!1 &1197235099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197235102}
+  - component: {fileID: 1197235101}
+  - component: {fileID: 1197235100}
+  - component: {fileID: 1197235103}
+  m_Layer: 0
+  m_Name: Goal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &1197235100
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197235099}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &1197235101
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197235099}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.31}
+  m_EdgeRadius: 0
+--- !u!4 &1197235102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197235099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.23, y: 0.25, z: -93.04613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1197235103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197235099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368349d1b159b004598ae421d28e0fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: fish
 --- !u!1 &1223690179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,13 +1363,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1223690181}
   - component: {fileID: 1223690180}
-  - component: {fileID: 1223690182}
   - component: {fileID: 1223690183}
   - component: {fileID: 1223690185}
   - component: {fileID: 1223690184}
+  - component: {fileID: 1223690182}
   m_Layer: 0
   m_Name: blau
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1318,14 +1446,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223690179}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e09bb4ce11da7c44bcc22cd0e13618a, type: 3}
+  m_Script: {fileID: 11500000, guid: 61c26b2ac148c4d44863edaca6d5b4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 1
-  duration: 1
-  spriteRenderer: {fileID: 772628413}
+  targetTag: boat
 --- !u!114 &1223690183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,7 +1592,7 @@ GameObject:
   - component: {fileID: 1791590403}
   m_Layer: 0
   m_Name: boat
-  m_TagString: Untagged
+  m_TagString: boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1500,7 +1626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791590402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.32, y: 0.28, z: 0}
+  m_LocalPosition: {x: -6.52, y: 0.28, z: 0}
   m_LocalScale: {x: 0.2776, y: 0.2776, z: 0.2776}
   m_Children:
   - {fileID: 430249079}
@@ -1520,7 +1646,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08981776, y: -0.029937506}
+  m_Offset: {x: -2.4333885, y: -0.029937744}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1531,7 +1657,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.071556, y: 24.10579}
+  m_Size: {x: 10.384415, y: 24.10579}
   m_EdgeRadius: 0
 --- !u!114 &1791590406
 MonoBehaviour:

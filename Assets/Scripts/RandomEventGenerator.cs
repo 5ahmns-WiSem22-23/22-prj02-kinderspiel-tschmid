@@ -11,14 +11,13 @@ public class RandomEventGenerator : MonoBehaviour
     public static event RandomEvent RotTrigger;
     public static event RandomEvent BootTrigger;
     public Button uiButton;
+    public SpriteRenderer spriteRendererColor;
 
 
     IEnumerator DisableButton(Image button)
     {
-        //button.color = new Color(1, 182 / 255f, 182 / 255f, 1);
         button.gameObject.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(EventListener.duration);
-        //button.color = Color.white;
         button.gameObject.GetComponent<Button>().interactable = true;
     }
 
@@ -31,44 +30,44 @@ public class RandomEventGenerator : MonoBehaviour
         switch (randomNumber)
         {
             case 1:
+                spriteRendererColor.color = Color.blue;
                 if (BlauTrigger != null)
                 {
-                Debug.Log("Blau");
                     BlauTrigger();
                 }
                 break;
             case 2:
+                spriteRendererColor.color = new Color(204f / 255f, 0f, 204f / 255f, 1f);
                 if (LilaTrigger != null)
                 {
-                Debug.Log("Lila");
                     LilaTrigger();
                 }
                 break;
             case 3:
+                spriteRendererColor.color = new Color(1f, 128f / 255f, 0f, 1f);
                 if (OrangeTrigger != null)
                 {
-                Debug.Log("Orange");
                     OrangeTrigger();
                 }
                 break;
             case 4:
+                spriteRendererColor.color = Color.red;
                 if (RotTrigger != null)
                 {
-                Debug.Log("Rot");
                     RotTrigger();
                 }
                 break;
             case 5:
+                spriteRendererColor.color = Color.yellow;
                 if (BootTrigger != null)
                 {
-                Debug.Log("Boot");
                     BootTrigger();
                 }
                 break;
             case 6:
+                spriteRendererColor.color = Color.yellow;
                 if (BootTrigger != null)
                 {
-                Debug.Log("Boot");
                     BootTrigger();
                 }
                 break;
