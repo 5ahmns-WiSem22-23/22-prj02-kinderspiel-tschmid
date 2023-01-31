@@ -9,6 +9,7 @@ TagManager:
   - red
   - blue
   - purple
+  - colorIndicator
   layers:
   - Default
   - TransparentFX
